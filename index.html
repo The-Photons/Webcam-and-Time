@@ -5,21 +5,30 @@
     <title>Webcam and Time</title>
 </head>
 <body>
-<video autoplay style="width:45%" id="videoElement"></video>
-<iframe style="width:20%; border: none" height=400px src="https://time.is/Singapore" title="Time Now"></iframe>
+<div style="height: 100vh">
+    <video autoplay style="height:50%; display: block" id="video-element">
+        Not started
+    </video>
+    <iframe style="border: none; min-height: 45%; max-height: 45%; display: block"
+            src="https://time.is/Singapore" title="Time Now"></iframe>
+    <button type="button" id="start-button">Start Webcam</button>
+</div>
 
 <script>
-    var video = document.querySelector("#videoElement");
+    let video = document.querySelector("#video-element");
+    let startButton = document.querySelector("#start-button");
 
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({video: true})
-            .then(function (stream) {
-                video.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.log("Something went wrong!");
-            });
-    }
+    startButton.addEventListener("click", () => {
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({video: true})
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong!");
+                });
+        }
+    });
 </script>
 </body>
 </html>
