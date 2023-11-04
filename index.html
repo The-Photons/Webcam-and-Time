@@ -3,32 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Webcam and Time</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div style="height: 100vh">
-    <video autoplay style="height:50%; display: block" id="video-element">
-        Not started
-    </video>
-    <iframe style="border: none; min-height: 45%; max-height: 45%; display: block"
-            src="https://time.is/Singapore" title="Time Now"></iframe>
-    <button type="button" id="start-button">Start Webcam</button>
+<div class="webcam">
+    <a id="start-webcam" href="#">
+        <p>
+            <span class="webcam-start-text">Click/Tap to Start Webcam</span><br>
+            <span class="webcam-perms-text">(Please enable permission to use the camera)</span>
+        </p>
+    </a>
+</div>
+<div class="time">
+    <iframe class="time-site" src="https://time.is/" title="Time Now"></iframe>
 </div>
 
-<script>
-    let video = document.querySelector("#video-element");
-    let startButton = document.querySelector("#start-button");
-
-    startButton.addEventListener("click", () => {
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({video: true})
-                .then(function (stream) {
-                    video.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.log("Something went wrong!");
-                });
-        }
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
