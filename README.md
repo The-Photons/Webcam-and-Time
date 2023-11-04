@@ -1,2 +1,3 @@
 # webcam-and-time
-Webcam and time live
+
+Shows webcam and the live time on the same page.

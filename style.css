@@ -13,7 +13,7 @@ body {
     height: 65vh;
 }
 
-#start-webcam, .time{
+#start-webcam, .time {
     display: flex;
     justify-content: center;
     align-items: center;
