@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webcam and Time</title>
+</head>
+<body>
+<video autoplay style="width:45%" id="videoElement"></video>
+<iframe style="width:20%; border: none" height=400px src="https://time.is/Singapore" title="Time Now"></iframe>
+
+<script>
+    var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({video: true})
+            .then(function (stream) {
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.log("Something went wrong!");
+            });
+    }
+</script>
+</body>
+</html>
