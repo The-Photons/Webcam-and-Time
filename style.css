@@ -60,11 +60,11 @@ body {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     .webcam {
-        height: 72.5vh;
+        height: 70vh;
     }
 
     .time {
-        height: 27.5vh;
+        height: 30vh;
     }
 
     .time-site {
@@ -95,14 +95,6 @@ body {
 }
 
 @media (max-width: 320px) {
-    .webcam {
-        height: 77.5vh;
-    }
-
-    .time {
-        height: 22.5vh;
-    }
-
     .webcam-start-text {
         font-size: 16pt;
     }
